@@ -346,7 +346,7 @@ server {
                 break;
         }
 	#Subscription Path (json/fragment)
-        location /${json_path} {
+        location /${} {
                 if (\$hack = 1) {return 404;}
                 proxy_redirect off;
                 proxy_set_header Host \$host;
@@ -355,7 +355,7 @@ server {
                 proxy_pass http://127.0.0.1:${sub_port};
                 break;
         }
-	location /${json_path}/ {
+	location /${}/ {
                 if (\$hack = 1) {return 404;}
                 proxy_redirect off;
                 proxy_set_header Host \$host;
@@ -494,7 +494,7 @@ server {
                 break;
         }
 	#Subscription Path (json/fragment)
-        location /${json_path} {
+        location /${} {
                 if (\$hack = 1) {return 404;}
                 proxy_redirect off;
                 proxy_set_header Host \$host;
@@ -503,7 +503,7 @@ server {
                 proxy_pass http://127.0.0.1:${sub_port};
                 break;
         }
-	location /${json_path}/ {
+	location /${}/ {
                 if (\$hack = 1) {return 404;}
                 proxy_redirect off;
                 proxy_set_header Host \$host;
@@ -601,7 +601,7 @@ if [[ -f $XUIDB ]]; then
         emoji_flag=$(LC_ALL=en_US.UTF-8 curl -s https://ipwho.is/ | jq -r '.flag.emoji')
        	sqlite3 $XUIDB <<EOF
              INSERT INTO "settings" ("key", "value") VALUES ("subPort",  '${sub_port}');
-	     INSERT INTO "settings" ("key", "value") VALUES ("subPath",  '${sub_path}');
+	     INSERT INTO "settings" ("key", "value") VALUES ("subPath",  '/${sub_path}/');
 	     INSERT INTO "settings" ("key", "value") VALUES ("subURI",  '${sub_uri}');
              INSERT INTO "settings" ("key", "value") VALUES ("subJsonPath",  '${json_path}');
 	     INSERT INTO "settings" ("key", "value") VALUES ("subJsonURI",  '${json_uri}');
