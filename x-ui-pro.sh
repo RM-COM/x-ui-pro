@@ -1000,18 +1000,18 @@ su -c "/usr/bin/sub2sing-box server --bind 127.0.0.1 --port 8080 & disown" root
 
 ######################install_fake_site#################################################################
 
-sudo su -c "bash <(wget -qO- https://raw.githubusercontent.com/mozaroc/x-ui-pro/refs/heads/master/randomfakehtml.sh)"
+sudo su -c "bash <(wget -qO- https://raw.githubusercontent.com/RM-COM/x-ui-pro/master/randomfakehtml.sh)"
 
 ######################install_web_sub_page##############################################################
 
-URL_SUB_PAGE=( "https://github.com/legiz-ru/x-ui-pro/raw/master/sub-3x-ui.html"
-		"https://github.com/legiz-ru/x-ui-pro/raw/master/sub-3x-ui-classical.html"
-	)
-URL_CLASH_SUB=( "https://github.com/legiz-ru/x-ui-pro/raw/master/clash/clash.yaml"
-		"https://github.com/legiz-ru/x-ui-pro/raw/master/clash/clash_skrepysh.yaml"
-		"https://github.com/legiz-ru/x-ui-pro/raw/master/clash/clash_fullproxy_without_ru.yaml"
-  		"https://github.com/legiz-ru/x-ui-pro/raw/master/clash/clash_refilter_ech.yaml"
-	)
+URL_SUB_PAGE=( "https://github.com/RM-COM/x-ui-pro/raw/master/sub-3x-ui.html"
+        "https://github.com/RM-COM/x-ui-pro/raw/master/sub-3x-ui-classical.html"
+    )
+URL_CLASH_SUB=( "https://github.com/RM-COM/x-ui-pro/raw/master/clash/clash.yaml"
+        "https://github.com/RM-COM/x-ui-pro/raw/master/clash/clash_skrepysh.yaml"
+        "https://github.com/RM-COM/x-ui-pro/raw/master/clash/clash_fullproxy_without_ru.yaml"
+        "https://github.com/RM-COM/x-ui-pro/raw/master/clash/clash_refilter_ech.yaml"
+    )
 DEST_DIR_SUB_PAGE="/var/www/subpage"
 DEST_FILE_SUB_PAGE="$DEST_DIR_SUB_PAGE/index.html"
 DEST_FILE_CLASH_SUB="$DEST_DIR_SUB_PAGE/clash.yaml"
